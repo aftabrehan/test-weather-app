@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import Layout from "../src/components/Layout";
+import WeatherApp from "../src/components/WeatherApp";
 
 const IndexPage = () => {
   useEffect(() => {
@@ -18,15 +19,7 @@ const IndexPage = () => {
     global.ipcRenderer.send("message", "hi from next");
   };
 
-  return (
-    <Layout title="Home | Next.js + TypeScript + Electron Example">
-      <h1 className="flex text-red-500">Hello Next.js 👋</h1>
-      <button onClick={onSayHiClick}>Say hi to electron</button>
-      <p>
-        <Link href="/about">About</Link>
-      </p>
-    </Layout>
-  );
+  return <WeatherApp />;
 };
 
 export default IndexPage;
